@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS Reference VS Copy</title>
+</head>
+<body>
+
+  <script>
+    // start with strings, numbers and booleans
+
+    // Let's say we have an array
+    var players = ['Wes', 'Sarah', 'Ryan', 'Poppy'];
+
+    // and we want to make a copy of it.
+    var temp = players;
+    console.log(temp);
+
+    // You might think we can just do something like this:
+
+    // however what happens when we update that array?
+    temp.push('wanghang');
+    temp[1] = 'miss zhao';
+    console.log(players);
+
+
+    // now here is the problem!
+
+    // oh no - we have edited the original array too!
+
+    // Why? It's because that is an array reference, not an array copy. They both point to the same array!
+
+    // So, how do we fix this? We take a copy instead!
+
+    // one way
+
+    // or create a new array and concat the old one in
+    var array = [];
+    for(var i = 0; i < players.length; i++){
+        array.push(players[i]);
+    }
+    array.push('nothing');
+   // console.log(array, players);
+    // or use the new ES6 Spread
+
+    var temp2 = players.slice();
+    temp2[2] = 'bitch';
+   // console.log(temp2, players);
+    var temp3 = players.concat(players);
+    temp3[0] = 'hello';
+    console.log(temp3, players);
+
+
+    // now when we update it, the original one isn't changed
+
+    // The same thing goes for objects, let's say we have a person object
+
+    // with Objects
+    const person = {
+        name: 'Wes Bos',
+        age: 80
+    };
+
+    const other = person;
+    other.name = 'wanghang';
+    console.log(other, person);
+
+
+    // and think we make a copy:
+    const other1 = Object.assign({}, person, {test: "test"});
+    console.log(other1, person);
+
+    // how do we take a copy instead?
+
+    // We will hopefully soon see the object ...spread
+
+    // Things to note - this is only 1 level deep - both for Arrays and Objects. lodash has a cloneDeep method, but you should think twice before using it.
+
+  </script>
+
+</body>
+</html>

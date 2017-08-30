@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form Test</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+  <style type="text/css">
+ 	
+ 	form.stylin_form1 { width:60em; margin:20px auto; border:1px solid #bbb7ae; padding:0.5em 0.5em 0.15em; }
+ 	.stylin_form1 h3 {margin:0; padding:0 0 0.2em 0.2em; font-weight:600; color:#bbb7ae; }
+ 	.stylin_form1 fieldest {margin:0; padding:0 0 0.2em 0; width:100%; color:#bbb7ae; }
+ 	.stylin_form1 legend {width:100%; padding:0.3em 0; background:#bbb7ae; }
+ 	.stylin_form1 legend span { display:block; font-size:1em; line-height:1.1em; padding:0 0 0 0.4em; font-weight:700; color:#fff; }
+ 	.stylin_form1 section { overflow:hidden; padding:0.2em 0 0.4em 0; border-bottom: 8px solid #e7e5df;  }
+ 	.stylin_form1 section:last-child { border-bottom:0px;}
+ 	.stylin_form1 section label, 
+ 	.stylin_form1 section h4 { display:block; clear:both; margin:0.3em 0.3em 0 0; padding-bottom:0.1em;
+ 				 font-size:0.8em; font-family:'Droid Sans'; font-weight:400; line-height:1.1; }
+ 	.stylin_form1 section label span, 
+ 	.stylin_form1 section h4 span { font-size:0.75em; vertical-align:text-top; color:#f00;}
+ 	.stylin_form1 section p.note { font-size:0.7em; color:#f00; margin:0; padding: 0 0 0.3em 0; }
+ 	.stylin_form1 section input, 
+ 	.stylin_form1 section textarea, 
+ 	.stylin_form1 section select { margin:0.2em 0.5em 0.2em 0; padding:0.2em 0.4em;
+ 				 color:#000; box-shadow:1px 1px 3px #ccc; font-size:0.8em; font-family:inherit; outline:none; }
+ 	.stylin_form1 section input, 
+ 	.stylin_form1 section textarea { width:12em; border:1px solid #bbb7ae; border-radius:3px; }
+ 	.stylin_form1 section textarea { height:5em; margin-top:0.3em; line-height:1.1; }
+ 	.stylin_form1 section p { margin:0.3em 0.75em 0; clear:both; font-size:0.7em; line-height:1.1; color:#000; }
+ 	.stylin_form1 section p.error { color:#f00;}
+ 	
+ 	.stylin_form1 section section { overflow:hidden; margin:0.2em 0 0.3em 0.4em; padding:0 0 0.1em 0; border-bottom:none; }
+ 	.stylin_form1 section section input { float:left; clear:both; width:auto; margin:0.1em 0 0em 0.3em; }
+ 	.stylin_form1 section section label { float:left; clear:none; width:15em; margin:0.15em 0 0 0.6em; 
+ 						font-weight:normal; font-size:0.7em; line-height:1.2; }
+ 	.stylin_form1 section select { margin-left:0.4em; font-size:0.85em; }
+ 	.stylin_form1 section input[type="submit"] { width:auto; margin:0.4em 0.3em 0 0; font-size:1em; font-weight:800; color:#fff;
+ 						background-color:#bbb7ae; cursor:pointer; }
+ 	.stylin_form1 > section:last-child { text-align:center; }
+ 	
+ 	
+ 	form.stylin_form1.labels_left { width:70em; }
+ 	form.stylin_form1.labels_left label,
+ 	form.stylin_form1.labels_left h4 {float:left; width:10em; }
+ 	form.stylin_form1.labels_left p { margin:0 0 0 11.35em; padding: 0.3em 0 0 0; clear:both; }
+ 	form.stylin_form1.labels_left p.note { margin:0 0 0.2em 0; }
+ 	form.stylin_form1.labels_left section section { width:10em; margin-left:9em; padding-top:0; }
+ 	form.stylin_form1.labels_left section section input { width:1.25em; margin-left:0; }
+ 	.stylin_form1.labels_left section input,
+ 	.stylin_form1.labels_left section textare,
+ 	.stylin_form1.labels_left section select { float:left; width:12em; margin-left:0.2em; }
+ 	.stylin_form1.labels_left > section input[type=submit] { float:none; }
+ 	
+  </style>
+
+  </head>
+  
+  <body>
+    <form class="stylin_form1 labels_left" action="process_form.php" method="post">
+    	<h3>A Stylin Form</h3>
+    	<fieldset>
+    		<legend ><span>Part 1 &#8226; Basic Controls</span></legend>
+    		<section>
+    			<p class="note">* indicates requried field</p>
+    			<label for="user_name" >User Name<span>*</span></label>
+    			<input type="text" id="user_name" name="user_name" />
+    			<p>please select a user name.</p>
+    		</section>
+    		
+    		<section>
+    			<label for="password">Password<span>*</span></label>
+    			<input type="password" id="password" name="password" maxlength="20"/>
+    			<p>please input password.</p>
+    		</section>
+    		
+    		<section>
+    			<label for="description">Description<span>*</span></label>
+    			<textarea id="description" name="description" placeholder="Enter the description here"></textarea>
+    		</section>
+    		
+    		<section>
+    			<label for="special_date">Description<span>*</span></label>
+    			<input type="date" id="special_date" name="event_date" min="2012-09-05"/>
+    		</section>
+    	</fieldset>
+    	
+    	<fieldset>
+    		<legend ><span>Part 2 &#8226; Multiple-Choice Controls</span></legend>
+			<section>
+				<h4>Seclect Any Number</h4>
+				<section>
+					<input type="checkbox" id="check1" name="checkset" value="1" tabindex="4"/>
+					<label for="check1">Choice 1</label>
+				</section>
+				
+				<section>
+					<input type="checkbox" checked="checked" id="check2"  name="checkset" value="2"/>
+					<label for="check2">Choice 2 is pre-checked</label>
+				</section>
+				
+				<section>
+					<input type="checkbox" id="check3" name="checkset" value="3" />
+					<label for="check3">Choice 3&mdash; add as many as you need!</label>
+				</section>
+				<p>You must choose one or more!</p>	
+			</section>  
+			
+			<section>
+				<h4>Select Only One</h4>
+				<section>
+					<input  checked="checked" id="radio1" name="radioset" type="radio" value="Choice_1"/>
+					<label for="radio1">Choice 1 is pre-selected and shows the text wraps nicely if it goes to multiple lines.</label>
+				</section>
+				
+				<section>
+					<input id="radio2" name="radioset" type="radio" value="Choice_2"  />
+					<label for="radio2">Choice 2</label>
+				</section>
+				
+				<section>
+					<input id="radio3" name="radioset" type="radio" value="Choice_3"  />
+					<label for="radio3">Choice 3</label>
+				</section>
+			</section>
+			
+			<section>
+				<label for="select_choice">Select Your Choice</label>
+				<select id="select_choice" name="select_choice">
+					<option value="0">None</option>
+					<option value="1">Choice 1</option>
+					<option value="2">Choice 2</option>
+					<option value="3">Choice 3</option>
+					<option value="4">Choice 4</option>
+				</select>
+			</section>
+				
+    	</fieldset>
+    	
+    	<section>
+    		<input type="submit" value="Submit This Form"/>
+    	</section>
+    	
+    </form>
+  </body>
+</html>
